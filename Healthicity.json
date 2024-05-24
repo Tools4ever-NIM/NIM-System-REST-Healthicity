@@ -1,0 +1,139 @@
+{
+    "schema": {
+      "options": {},
+      "crud_objects": {
+        "Departments": {
+          "operations": {
+            "DepartmentsList": {
+              "method": "get",
+              "call": {
+                "path": "/api/v3/departments"
+              },
+              "processing_options": {
+                "output_field": "data"
+              },
+              "query_parameters": {}
+            }
+          },
+          "parameters": {},
+          "key": "id",
+          "resources": {
+            "id": "number*",
+            "title": "string*",
+            "client_id": "string*"
+          }
+        },
+        "Locations": {
+            "operations": {
+              "LocationsList": {
+                "method": "get",
+                "call": {
+                  "path": "/api/v3/locations"
+                },
+                "processing_options": {
+                  "output_field": "data"
+                },
+                "query_parameters": {}
+              }
+            },
+            "parameters": {},
+            "key": "client_id",
+            "resources": {
+              "name": "string*",
+              "client_id": "string*"
+            }
+        },
+        "PositionTypes": {
+            "operations": {
+              "PositionTypesList": {
+                "method": "get",
+                "call": {
+                  "path": "/api/v3/position_types"
+                },
+                "processing_options": {
+                  "output_field": "data"
+                },
+                "query_parameters": {}
+              }
+            },
+            "parameters": {},
+            "key": "id",
+            "resources": {
+              "id": "number*",
+              "title": "string*",
+              "client_id": "string*"
+            }
+        },
+        "Roles": {
+            "operations": {
+              "RolesList": {
+                "method": "get",
+                "call": {
+                  "path": "/api/v3/roles"
+                },
+                "processing_options": {
+                  "output_field": "data"
+                },
+                "query_parameters": {}
+              }
+            },
+            "parameters": {},
+            "key": "id",
+            "resources": {
+              "id": "number*",
+              "role": "string*",
+              "client_id": "string*"
+            }
+        },
+        "TimeZones": {
+            "operations": {
+              "RolesList": {
+                "method": "get",
+                "call": {
+                  "path": "/api/v3/time_zones"
+                },
+                "processing_options": {
+                  "output_field": "data"
+                },
+                "query_parameters": {}
+              }
+            },
+            "parameters": {},
+            "key": "id",
+            "resources": {
+              "id": "number*",
+              "title": "string*"
+            }
+        }
+      }
+    },
+    "rest": {
+      "config": {
+        "baseUrl": "https://{tenant_id}",
+        "sslLegacyProtocols": true,
+        "get": {
+          "maxPageCount": 500
+        },
+        "authentication": "client_credentials",
+        "call_handling": "generic",
+        "test_connection": {
+          "url": "/api/v3/departments"
+        },
+        "headers": {
+          "Suppress-Development-Permissions": true
+        },
+        "socket_timeout": 3600000
+      },
+      "authOptions": {
+        "authUrl": "https://app.healthicity.com/oauth/token",
+        "directToken": true,
+        "scopes": [
+            "compliance_manager_api"
+        ]
+      }
+    },
+    "connection": {
+      "items": [
+      ]
+    }
+  }
